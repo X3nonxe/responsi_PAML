@@ -8,4 +8,5 @@ class AppColors {
   static const Color errorColor = Colors.red;
   static const Color cardBackgroundColor = Colors.grey;
   static const Color backgroudWhite = Colors.white;
+  static const Color borderColor = Colors.grey;
 }

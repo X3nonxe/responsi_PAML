@@ -5,6 +5,7 @@ import 'package:responsi/screens/account/account_screen.dart';
 import 'package:responsi/screens/forgot_password/forgot_password_screen.dart';
 import 'package:responsi/screens/home/home_screen.dart';
 import 'package:responsi/screens/login/login_screen.dart';
+import 'package:responsi/screens/main_screen.dart';
 import 'package:responsi/screens/profile/profile_screen.dart';
 import 'package:responsi/screens/register/register_screen.dart';
 import 'package:responsi/screens/splash/spash_screen.dart';
@@ -26,6 +27,8 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const AccountScreen());
       case RouteNames.profile:
         return MaterialPageRoute(builder: (_) => const ProfileScreen());
+      case RouteNames.mainScreen:
+        return MaterialPageRoute(builder: (_) => const MainScreen());
       default:
         return MaterialPageRoute(builder: (_) => const SplashScreen());
     }

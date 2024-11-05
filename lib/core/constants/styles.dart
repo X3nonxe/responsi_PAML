@@ -9,6 +9,17 @@ class AppStyles {
     color: AppColors.textColor,
   );
 
+  static const TextStyle profileNameStyle = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+    color: AppColors.textColor,
+  );
+
+  static const TextStyle profileSubtitleStyle = TextStyle(
+    fontSize: 18,
+    color: AppColors.textColor,
+  );
+
   static const TextStyle sectionTitleStyle = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.normal,

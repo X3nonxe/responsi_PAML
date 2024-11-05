@@ -1,16 +1,17 @@
-// screens/ForgotPasswordScreen_screen.dart
 import 'package:flutter/material.dart';
-import 'package:responsi/core/constants/colors.dart';
 import 'package:responsi/core/constants/strings.dart';
 import 'package:responsi/core/constants/styles.dart';
 import 'package:responsi/routes/routes_name.dart';
 import 'package:responsi/widgets/custom_button.dart';
+import 'package:responsi/widgets/custom_text_field.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
     return Scaffold(
       resizeToAvoidBottomInset: true,
       body: SingleChildScrollView(
@@ -18,7 +19,6 @@ class ForgotPasswordScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Logo
             const SizedBox(height: 80),
             Center(
               child: Image.asset(
@@ -27,8 +27,6 @@ class ForgotPasswordScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 60),
-
-            // Text "Masuk"
             const Center(
               child: Text(
                 AppStrings.forgotPassword,
@@ -36,8 +34,6 @@ class ForgotPasswordScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 80),
-
-            // message
             const Text(
               AppStrings.message,
               style: AppStyles.textStyleSecondary,
@@ -49,34 +45,34 @@ class ForgotPasswordScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-
-            // Input Email
-            const TextField(
-              decoration: InputDecoration(
-                labelText: AppStrings.textEmailField,
-                border: InputBorder.none,
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(25.0)),
-                  borderSide: BorderSide(color: Colors.blue),
-                ),
-                prefixIcon: Icon(Icons.email),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(25.0)),
-                  borderSide: BorderSide(color: AppColors.accentColor),
-                ),
+            Form(
+              key: formKey,
+              child: Column(
+                children: [
+                  CustomTextField(
+                    label: AppStrings.textEmailField,
+                    icon: Icons.email,
+                    keyboardType: TextInputType.emailAddress,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Email tidak boleh kosong';
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(height: 20),
+                ],
               ),
-              keyboardType: TextInputType.emailAddress,
             ),
-            const SizedBox(height: 110),
-
-            // Tombol Login menggunakan CustomButton
+            const SizedBox(height: 80),
             Center(
               child: CustomButton(
-                text: AppStrings.register,
+                text: AppStrings.buttonForgotPassword,
                 width: 120,
                 onPressed: () {
-                  // Implementasi login
-                  Navigator.pushNamed(context, RouteNames.home);
+                  if (formKey.currentState!.validate()) {
+                    Navigator.pushNamed(context, RouteNames.mainScreen);
+                  }
                 },
               ),
             ),

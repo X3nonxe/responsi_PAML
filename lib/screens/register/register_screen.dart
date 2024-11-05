@@ -1,16 +1,19 @@
-// screens/RegisterScreen_screen.dart
+// screens/register_screen.dart
 import 'package:flutter/material.dart';
-import 'package:responsi/core/constants/colors.dart';
 import 'package:responsi/core/constants/strings.dart';
 import 'package:responsi/core/constants/styles.dart';
 import 'package:responsi/routes/routes_name.dart';
 import 'package:responsi/widgets/custom_button.dart';
+import 'package:responsi/widgets/custom_text_field.dart';
+import 'package:responsi/widgets/form_widget.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
     return Scaffold(
       resizeToAvoidBottomInset: true,
       body: SingleChildScrollView(
@@ -19,7 +22,6 @@ class RegisterScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Logo
               const SizedBox(height: 80),
               Center(
                 child: Image.asset(
@@ -28,8 +30,6 @@ class RegisterScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 60),
-
-              // Text "Masuk"
               const Center(
                 child: Text(
                   AppStrings.register,
@@ -37,65 +37,49 @@ class RegisterScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 40),
-
-              // Input Email
-              const TextField(
-                decoration: InputDecoration(
-                  labelText: AppStrings.textEmailField,
-                  border: InputBorder.none,
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(25.0)),
-                    borderSide: BorderSide(color: Colors.blue),
-                  ),
-                  prefixIcon: Icon(Icons.email),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(25.0)),
-                    borderSide: BorderSide(color: AppColors.accentColor),
-                  ),
+              FormWidget(
+                formKey: formKey,
+                child: Column(
+                  children: [
+                    CustomTextField(
+                      label: AppStrings.textEmailField,
+                      icon: Icons.email,
+                      keyboardType: TextInputType.emailAddress,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Email tidak boleh kosong';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(height: 20),
+                    CustomTextField(
+                      label: AppStrings.textPasswordField,
+                      icon: Icons.lock,
+                      obscureText: true,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Password tidak boleh kosong';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(height: 20),
+                    CustomTextField(
+                      label: AppStrings.textPasswordAgainField,
+                      icon: Icons.lock,
+                      obscureText: true,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Harap konfirmasi password';
+                        }
+                        return null;
+                      },
+                    ),
+                    const SizedBox(height: 20),
+                  ],
                 ),
-                keyboardType: TextInputType.emailAddress,
               ),
-              const SizedBox(height: 20),
-
-              // Input Password
-              const TextField(
-                decoration: InputDecoration(
-                  labelText: AppStrings.textPasswordField,
-                  border: InputBorder.none,
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(25.0)),
-                    borderSide: BorderSide(color: Colors.blue),
-                  ),
-                  prefixIcon: Icon(Icons.lock),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(25.0)),
-                    borderSide: BorderSide(color: AppColors.accentColor),
-                  ),
-                ),
-                obscureText: true,
-              ),
-              const SizedBox(height: 20),
-
-              // Input Password Again
-              const TextField(
-                decoration: InputDecoration(
-                  labelText: AppStrings.textPasswordAgainField,
-                  border: InputBorder.none,
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(25.0)),
-                    borderSide: BorderSide(color: Colors.blue),
-                  ),
-                  prefixIcon: Icon(Icons.lock),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(25.0)),
-                    borderSide: BorderSide(color: AppColors.accentColor),
-                  ),
-                ),
-                obscureText: true,
-              ),
-              const SizedBox(height: 20),
-
-              // Teks "Sudah punya akun?" dan "Daftar"
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Column(
@@ -108,11 +92,8 @@ class RegisterScreen extends StatelessWidget {
                       ],
                     ),
                     const SizedBox(height: 10),
-
-                    // Teks "Masuk"
                     GestureDetector(
                       onTap: () {
-                        // Navigasi ke halaman registrasi
                         Navigator.pushNamed(context, RouteNames.login);
                       },
                       child: const Text(
@@ -124,15 +105,14 @@ class RegisterScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 100),
-
-              // Tombol Login menggunakan CustomButton
               Center(
                 child: CustomButton(
                   text: AppStrings.register,
                   width: 120,
                   onPressed: () {
-                    // Implementasi login
-                    Navigator.pushNamed(context, RouteNames.home);
+                    if (formKey.currentState!.validate()) {
+                      Navigator.pushNamed(context, RouteNames.mainScreen);
+                    }
                   },
                 ),
               ),

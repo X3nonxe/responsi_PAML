@@ -3,6 +3,7 @@ class AppStrings {
   static const String login = "Masuk";
   static const String register = "Daftar";
   static const String forgotPassword = "Lupa Password?";
+  static const String buttonForgotPassword = "Kirim";
   static const String noAccount = "Belum punya akun?";
   static const String textEmailField = "Masukkan Email";
   static const String textPasswordField = "Masukkan Password";

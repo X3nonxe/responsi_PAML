@@ -14,7 +14,6 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // Navigasi ke halaman login setelah 5 detik
     Timer(const Duration(seconds: 5), () {
       Navigator.pushReplacementNamed(context, RouteNames.login);
     });
@@ -25,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Center(
         child: Image.asset(
-          'assets/images/splash_image.png', // Path gambar
+          'assets/images/splash_image.png',
           fit: BoxFit.cover,
         ),
       ),
