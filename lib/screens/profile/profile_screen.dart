@@ -1,13 +1,14 @@
-// screens/profile_screen.dart
+// screens/profile/profile_screen.dart
 import 'package:flutter/material.dart';
-import 'package:responsi/widgets/app_bar.dart';
 import 'package:responsi/widgets/custom_button.dart';
 import 'package:responsi/widgets/custom_text_field.dart';
 import 'package:responsi/widgets/profile_section.dart';
 import 'package:responsi/widgets/form_widget.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+  final VoidCallback? onBack;
+
+  const ProfileScreen({super.key, this.onBack});
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +16,21 @@ class ProfileScreen extends StatelessWidget {
 
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      appBar: const CustomAppBar(showActions: false, showAccountIcon: false),
+      appBar: AppBar(
+        title: const Text("Profile"),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: onBack ?? () => Navigator.pop(context),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(40.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const ProfileSection(),
-              const SizedBox(height: 30),
+              const SizedBox(height: 20),
               FormWidget(
                 formKey: formKey,
                 child: Column(
@@ -39,7 +46,7 @@ class ProfileScreen extends StatelessWidget {
                         return null;
                       },
                     ),
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 10),
                     CustomTextField(
                       label: "Nama",
                       icon: Icons.person,
@@ -51,7 +58,7 @@ class ProfileScreen extends StatelessWidget {
                         return null;
                       },
                     ),
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 10),
                     CustomTextField(
                       label: "Nomor Telepon",
                       icon: Icons.phone,
@@ -63,7 +70,7 @@ class ProfileScreen extends StatelessWidget {
                         return null;
                       },
                     ),
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 10),
                     CustomTextField(
                       label: "Alamat",
                       icon: Icons.home,
@@ -78,14 +85,18 @@ class ProfileScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 100),
               Center(
                 child: CustomButton(
                   text: "Ubah Profil",
-                  width: 150,
+                  width: 140,
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
-                      Navigator.pop(context);
+                      if (onBack != null) {
+                        onBack!();
+                      } else {
+                        Navigator.pop(context);
+                      }
                     }
                   },
                 ),

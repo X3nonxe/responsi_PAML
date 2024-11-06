@@ -4,20 +4,30 @@ import 'package:responsi/core/constants/colors.dart';
 import 'package:responsi/routes/routes_name.dart';
 import 'package:responsi/screens/account/account_screen.dart';
 import 'package:responsi/screens/home/home_screen.dart';
+import 'package:responsi/screens/profile/profile_screen.dart';
 
 class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+  final int selectedIndex;
+  
+  const MainScreen({super.key, this.selectedIndex = 0});
 
   @override
   MainScreenState createState() => MainScreenState();
 }
 
 class MainScreenState extends State<MainScreen> {
-  int _selectedIndex = 0;
+  late int _selectedIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedIndex = widget.selectedIndex;
+  }
 
   final List<Widget> _pages = [
     const HomeScreen(),
     const AccountScreen(),
+    const ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {

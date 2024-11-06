@@ -1,19 +1,36 @@
 // screens/account/account_screen.dart
 import 'package:flutter/material.dart';
-import 'package:responsi/routes/routes_name.dart';
 import 'package:responsi/widgets/app_bar.dart';
 import 'package:responsi/widgets/profile_section.dart';
 import 'package:responsi/widgets/menu_list_tile.dart';
+import 'package:responsi/screens/profile/profile_screen.dart';
 
-class AccountScreen extends StatelessWidget {
+class AccountScreen extends StatefulWidget {
   const AccountScreen({super.key});
 
   @override
+  State<AccountScreen> createState() => _AccountScreenState();
+}
+
+class _AccountScreenState extends State<AccountScreen> {
+  bool showProfileScreen = false;
+
+  @override
   Widget build(BuildContext context) {
+    if (showProfileScreen) {
+      // Menampilkan ProfileScreen
+      return ProfileScreen(
+        onBack: () {
+          setState(() {
+            showProfileScreen = false;
+          });
+        },
+      );
+    }
+
+    // Menampilkan AccountScreen (Halaman Utama Akun)
     return Scaffold(
-      appBar: const CustomAppBar(
-          showActions: false,
-          showAccountIcon: false),
+      appBar: const CustomAppBar(showActions: false, showAccountIcon: false),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
@@ -27,7 +44,9 @@ class AccountScreen extends StatelessWidget {
                 title: "Kelola Akun",
                 icon: Icons.arrow_forward,
                 onTap: () {
-                  Navigator.pushNamed(context, RouteNames.profile);
+                  setState(() {
+                    showProfileScreen = true;
+                  });
                 },
               ),
               const Divider(),

@@ -64,7 +64,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 80),
+            const SizedBox(height: 120),
             Center(
               child: CustomButton(
                 text: AppStrings.buttonForgotPassword,

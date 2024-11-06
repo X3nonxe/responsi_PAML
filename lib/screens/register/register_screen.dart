@@ -29,14 +29,14 @@ class RegisterScreen extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              const SizedBox(height: 60),
+              const SizedBox(height: 40),
               const Center(
                 child: Text(
                   AppStrings.register,
                   style: AppStyles.titleStyle,
                 ),
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 10),
               FormWidget(
                 formKey: formKey,
                 child: Column(
@@ -104,7 +104,7 @@ class RegisterScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 100),
+              const SizedBox(height: 120),
               Center(
                 child: CustomButton(
                   text: AppStrings.register,
