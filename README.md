@@ -55,7 +55,7 @@ Start the project
   </tr>
   <tr>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/3780f6d9-99b4-4a80-adb6-a7f3c9683483" alt="Registration Screen" width="200"/>
+      <img src="https://github.com/user-attachments/assets/70965b82-aae0-4e0a-abdb-263855dcea92" alt="Registration Screen" width="200"/>
       <br>
       <em>Gambar 4: Registration Screen</em>
     </td>
