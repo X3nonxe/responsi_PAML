@@ -38,41 +38,41 @@ Start the project
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/1672b770-da29-40a8-8d0a-06025db2c327" alt="Splash Screen 1" width="200"/>
+      <img src="https://github.com/user-attachments/assets/6315fd21-d50a-4433-8c1e-9a8b7eca8358" alt="Splash Screen" width="200"/>
       <br>
       <em>Gambar 1: Splash Screen</em>
     </td>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/8cb5436e-59f5-4aa0-baa3-adff3f56f03e" alt="Splash Screen 2" width="200"/>
+      <img src="https://github.com/user-attachments/assets/eebb4e79-3fc2-42c5-8f7c-ba89e665b458" alt="Login Screen" width="200"/>
       <br>
       <em>Gambar 2: Login Screen</em>
     </td>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/db72830c-1e1e-41ed-9a7d-83566d0254d5" alt="Splash Screen 3" width="200"/>
+      <img src="https://github.com/user-attachments/assets/67577a9f-d81d-4d0a-8061-893e0e7ae95a" alt="Forgot Password Screen" width="200"/>
       <br>
       <em>Gambar 3: Lupa Password Screen</em>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/3780f6d9-99b4-4a80-adb6-a7f3c9683483" alt="Splash Screen 4" width="200"/>
+      <img src="https://github.com/user-attachments/assets/3780f6d9-99b4-4a80-adb6-a7f3c9683483" alt="Registration Screen" width="200"/>
       <br>
       <em>Gambar 4: Registration Screen</em>
     </td>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/d3c9f74d-339f-4afa-9d3a-e467ce0ce604" alt="Splash Screen 5" width="200"/>
+      <img src="https://github.com/user-attachments/assets/d3c9f74d-339f-4afa-9d3a-e467ce0ce604" alt="Home Screen" width="200"/>
       <br>
       <em>Gambar 5: Home Screen</em>
     </td>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/6ad012a3-a322-44f6-a02e-5dcdbb5d9a77" alt="Splash Screen 6" width="200"/>
+      <img src="https://github.com/user-attachments/assets/6ad012a3-a322-44f6-a02e-5dcdbb5d9a77" alt="Account Screen" width="200"/>
       <br>
       <em>Gambar 6: Account Screen</em>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/84eed724-a5a6-4919-bf5e-0e9af649af4b" alt="Splash Screen 7" width="200"/>
+      <img src="https://github.com/user-attachments/assets/12fb3d29-fc61-4a4f-a283-17d586f2c558" alt="Profile Screen" width="200"/>
       <br>
       <em>Gambar 7: Profile Screen</em>
     </td>
