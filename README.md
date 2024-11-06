@@ -36,5 +36,5 @@ Start the project
 
 ## Screenshots
 
-![Splash Screen](https://github.com/user-attachments/assets/1672b770-da29-40a8-8d0a-06025db2c327)
+![Splash Screen](https://github.com/468x300?user-attachments/assets/1672b770-da29-40a8-8d0a-06025db2c327)
 
