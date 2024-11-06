@@ -40,12 +40,12 @@ Start the project
     <td align="center">
       <img src="https://github.com/user-attachments/assets/1672b770-da29-40a8-8d0a-06025db2c327" alt="Splash Screen 1" width="200"/>
       <br>
-      <em>Gambar 1: Splash Screen 1</em>
+      <em>Gambar 1: Splash Screen</em>
     </td>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/8cb5436e-59f5-4aa0-baa3-adff3f56f03e" alt="Splash Screen 2" width="200"/>
       <br>
-      <em>Gambar 2: Splash Screen 2</em>
+      <em>Gambar 2: Lupa Password</em>
     </td>
     <td align="center">
       <img src="https://github.com/user-attachments/assets/db72830c-1e1e-41ed-9a7d-83566d0254d5" alt="Splash Screen 3" width="200"/>
